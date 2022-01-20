@@ -1,0 +1,29 @@
+﻿@model System.Collections.Generic.List<ChannelEngineApi.BusinessLogic.Models.ProductInfo>
+
+@{
+    ViewBag.Title = "TopOrders";
+    Layout = "_Layout";
+}
+<div class="text-center">
+    @if (Model == null)
+    {
+        <p>Orders not found.</p>
+    }
+    
+    <div><h3>Top Products</h3><br /></div>  
+    <table class="table table-bordered table-responsive table-hover">  
+        <tr>  
+            <th>Description </th>  
+            <th>Gtin </th>  
+            <th>Count </th>
+        </tr>  
+        @foreach (var product in Model)
+        {  
+            <tr>  
+                <td>@product.Description</td>  
+                <td>@product.Gtin</td>  
+                <td>@product.Count</td>
+            </tr>  
+        }  
+    </table>  
+</div>
